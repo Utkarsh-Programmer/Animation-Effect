@@ -1,0 +1,126 @@
+/* || RESET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+	height: 100vh;
+	width: 100%;
+}
+
+/* UTILITY CLASSES */
+.content {
+	background-image: linear-gradient(#96051d, #3a0d59);
+	background-image: linear-gradient(#96051d, #3a0d59);
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+h1 {
+	color: #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 70px;
+	z-index: 1;
+}
+
+/* square */
+.square ul li,
+.circle ul li {
+	position: absolute;
+	border: 1px solid #000;
+	width: 30px;
+	height: 30px;
+	list-style: none;
+	opacity: 0;
+}
+
+.square li {
+	top: 50vh;
+	left: 45vw;
+	animation: square 5s linear infinite;
+}
+
+.square li:nth-child(2) {
+	top: 80vh;
+	left: 10vw;
+}
+
+.square li:nth-child(3) {
+	top: 80vh;
+	left: 85vw;
+}
+
+.square li:nth-child(4) {
+	top: 10vh;
+	left: 70vw;
+}
+
+.square li:last-child {
+	top: 10vh;
+	left: 10vw;
+}
+
+/* circle */
+.circle li {
+	bottom: 0;
+	left: 15vw;
+	animation: circle 5s linear infinite;
+}
+
+.circle li:nth-child(2) {
+	left: 35vw;
+}
+
+.circle li:nth-child(3) {
+	left: 55vw;
+}
+
+.circle li:nth-child(4) {
+	left: 75vw;
+}
+
+.circle li:last-child {
+	left: 90vw;
+}
+
+/* ANIMATIONS */
+/* square animations */
+@keyframes square {
+	0% {
+		transform: scale(0) rotateY(0deg);
+		opacity: 1;
+		border-radius: 50%;
+	}
+
+	100% {
+		transform: scale(5) rotateY(1000deg);
+		opacity: 0;
+		border-radius: 0;
+	}
+}
+
+/* circle animations */
+@keyframes circle {
+	0% {
+		transform: scale(0) rotate(0deg);
+		opacity: 1;
+		bottom: 0;
+		border-radius: 0;
+	}
+
+	100% {
+		transform: scale(5) rotate(1000deg);
+		opacity: 0;
+		bottom: 90vh;
+		border-radius: 50%;
+	}
+}
